@@ -1,8 +1,6 @@
 package com.sgw.service;
 
-import com.spring.Component;
-import com.spring.Lazy;
-import com.spring.Scope;
+import com.spring.*;
 
 /**
  * @author sgw
@@ -10,5 +8,14 @@ import com.spring.Scope;
  **/
 @Component
 @Lazy
-public class TestService {
+public class TestService implements BeanInterface {
+    @Autowired
+    private AnimalService animalService;
+
+    private PersonService personService;
+
+    public void test(){
+        System.out.println(animalService);
+        System.out.println(personService);
+    }
 }
